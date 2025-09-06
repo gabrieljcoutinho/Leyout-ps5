@@ -1,0 +1,145 @@
+ body {
+     background-color: #131313;
+     color: white;
+     background-image: url('./imgs/fundoPS5.png');
+     /* Add your background image URL here */
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     margin: 0;
+     height: 100vh;
+     overflow: hidden;
+ }
+
+ body::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, 0.5);
+     /* Black overlay with 50% opacity */
+     z-index: -1;
+ }
+
+ .navbar {
+     --mdb-navbar-box-shadow: none --mdb-navbar-padding-top: 0.5625rem;
+     --mdb-navbar-brand-img-margin-right: none;
+     box-shadow: none;
+     padding-top: none;
+ }
+
+
+ .navbar-nav>li {
+     padding-left: 8px;
+     padding-right: 8px;
+ }
+
+ .items {
+     display: flex;
+     overflow-x: auto;
+     padding: 20px 0;
+     /* Add vertical padding for visual comfort */
+ }
+
+ .items::-webkit-scrollbar {
+     display: none;
+     /* Hides scrollbar */
+ }
+
+ .items .options {
+     min-width: 80px;
+
+
+     margin: 10px;
+     border-radius: 10px;
+
+     position: relative;
+
+ }
+
+ .options {
+     flex: 0 0 auto;
+     /* Adjusts flex setting for better control over item sizing */
+     margin: 10px;
+     border-radius: 10px;
+     transition: transform 0.3s ease-in-out;
+ }
+
+ .options:hover {
+     transform: scale(1.1);
+     /* Enlarges the item to give a 3D pop effect */
+     transition: transform 0.3s ease-in-out;
+     /* Smooth transition for the transform */
+
+ }
+
+ .carouselslide {
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+     border-radius: 8px;
+     padding: 20px;
+     background: #131313;
+     /* Default background */
+     transition: all 0.3s ease-in-out;
+     width: 160px;
+     /* Consistent width */
+     height: 160px;
+     /* Ensuring all items are the same height */
+     display: flex;
+     /* Ensures contents are properly centered */
+     align-items: center;
+     /* Center content vertically */
+     justify-content: center;
+     /* Center content horizontally */
+     background-size: cover;
+     /* Cover ensures background images fit the container */
+     background-position: center;
+     /* Centers the background image */
+     overflow: hidden;
+     /* Prevents content from spilling out */
+ }
+
+ .carouselslide img {
+     width: 100%;
+     /* Makes the image responsive within its container */
+     height: auto;
+     /* Maintain aspect ratio */
+ }
+
+
+ /* Media Queries */
+ @media (max-width: 768px) {
+
+     /* For tablets and below */
+     .options {
+         margin: 5px;
+         /* Smaller margin for smaller screens */
+     }
+
+     .carouselslide {
+         padding: 15px;
+         /* Smaller padding */
+         width: 120px;
+         /* Smaller width on tablets */
+     }
+ }
+
+ @media (max-width: 480px) {
+
+     /* For mobile phones */
+     .options {
+         margin: 3px;
+     }
+
+     .carouselslide {
+         padding: 10px;
+         width: 100px;
+         /* Even smaller width on mobiles */
+     }
+ }
+
+ .carouselslide:hover {
+
+     border: 2px solid white;
+ }
